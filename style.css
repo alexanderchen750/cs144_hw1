@@ -1,14 +1,65 @@
+:root {
+  --background-color: #ffffff;
+	--header-gradient1: #E3E3E6;
+	--header-gradient2: #877d73;
+	--grid-border: #000000;
+	--header-text-color: #6E655C;
+	--header-text-shadow: rgba(0, 0, 0, 0.5);
+	--email-signup-background: #fefefe;
+	--email-signup-border: #ccc;
+	--button: #E3E3E6;
+	--button-hover: #b9b9b9;
+	--email-shadow: rgba(0, 0, 0, 0.1);
+	--link-default: #0000EE;
+	--link-visited: #551A8B;
+	--link-hover: #0000EE;
+	--text-color: #000000;
+	--paw-color: #000000;
+}
+
+.dark-mode {
+	--background-color: #121212;
+	--header-gradient1: #605f5f;
+	--header-gradient2: #1f1b16;
+	--grid-border: #ffffff;
+	--header-text-color: #e0e0e0;
+	--header-text-shadow: rgba(255, 255, 255, 0.3);
+	--email-signup-background: #1e1e1e;
+	--email-signup-border: #444;
+	--button: #333;
+	--button-hover: #555;
+	--email-shadow: rgba(255, 255, 255, 0.05);
+	--link-default: #82b1ff;
+	--link-visited: #c792ea;
+	--link-hover: #82b1ff;
+	--text-color: #e0e0e0;
+	--paw-color: #ffffff;
+}
+
 body{
 	margin: 0;
 	padding: 0;
 	font-family: 'Truculenta', sans-serif;
+	background-color: var(--background-color);
+	color: var(--text-color)
 }
 p{
 	margin: 0;
 	padding: 0;
 }
+
 .header-container{
-	background: linear-gradient(to right, #E3E3E6, #877d73);
+	background: linear-gradient(to right, var(--header-gradient1), var(--header-gradient2));
+}
+
+.header-top{
+	display: flex;
+	justify-content: flex-end;
+  padding-top: 10px;
+	padding-right: 10px;
+}
+
+.header-main{
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -16,14 +67,19 @@ p{
 	padding-right: 2em;
 }
 
+.page-description{
+	font-size: 1.8em;
+}
+
 .page-title{
-	font-size: 7em;
-	color: #6E655C;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	font-size: 5em;
+	color: var(--header-text-color);
+	text-shadow: 2px 2px 4px var(--header-text-shadow);
 	margin: 0px;
+	
 }
 .header-image{
-  padding-top: 5em;
+  padding-top: 3em;
 }
 .header-image img{
 	max-width: 100%;     
@@ -40,19 +96,24 @@ p{
 	grid-template-columns: 1fr 1fr 1fr;
 	max-width: 100%;
   width: 100%;
-	padding-top: 2em;
-	row-gap: 2em; 
+}
+
+.main-content > * {
+  border: 1px solid var(--grid-border);
+  box-sizing: border-box; 
 }
 
 .main-content > .breed-info-container{
 	grid-area: breed-info-container;
+	padding-top: 1em;
 	padding-left: 2em;
-	font-size: 1em;
+	padding-right: 2em;
 }
 .main-content > .fun-facts-container{
 	grid-area: fun-facts-container;
+	padding-top: 1em;
 	padding-right: 2em;
-	font-size: 1em;
+	padding-left: 2em;
 }
 .main-content > .samoyed-image1{
 	grid-area: samoyed-image1;
@@ -69,32 +130,39 @@ p{
 	max-height: 300px;
 	height: 100%;
 	object-fit: cover;
+	display: block;
 }
 .article-header{
-	font-size: 2.5rem;
-	font-size: clamp(1.5em, 2.5vw, 2.5em);
-	color: #6E655C;
+	font-size: clamp(1.2em, 2.5vw, 2.5em);
+	color: var(--header-text-color);
 	margin: 0px;
 }
 .breed-info-text{
-	font-size: clamp(1em, 1.5vw, 2em);
+	font-size: clamp(1em, 1.6vw, 2em);
 }
 .fun-fact{
-	font-size: clamp(1em, 1.5vw, 2em);
+	font-size: clamp(1em, 1.6vw, 2em);
 }
 .fun-fact-detail{
-	font-size: clamp(0.9em, 1.25vw, 2em);
+	font-size: clamp(0.9em, 1.5vw, 2em);
 }
 
+h2 + ul{
+	margin-top: 0.2em;
+}
 
+.inner-list li::marker {
+  content: "🐾 ";
+  font-size: 1.2em;
+}
 
 .email-signup {
-	background-color: #fefefe;
+	background-color: var(--email-signup-background);
 	padding: 1.5rem;
 	border-radius: 12px;
 	max-width: 300px;
-	margin: 2rem auto;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	margin: 2rem;
+	box-shadow: 0 0 10px var(--email-shadow);
 }
 
 .email-signup form {
@@ -104,21 +172,21 @@ p{
 }
 
 .email-signup fieldset {
-	border: 2px solid #ccc;
+	border: 2px solid var(--email-signup-border);
 	padding: 1rem;
 	border-radius: 8px;
 }
-
-.email-signup legend {
-	font-size: 1.2rem;
-	padding: 0 0.5rem;
+.email-signup fieldset div {
+  display: flex;
+  flex-direction: column;
 }
 
 .email-signup label {
 	font-weight: 600;
 }
 .email-signup input[type="submit"] {
-	background-color: #E3E3E6;
+	background-color: var(--button);
+	color: var(--text-color);
 	border: none;
 	padding: 0.7rem;
 	font-size: 1rem;
@@ -128,32 +196,49 @@ p{
 }
 
 .email-signup input[type="submit"]:hover {
-    background-color: #b9b9b9;
+    background-color: var(--button-hover);
 }
 
+.toggle-button{
+	background-color: var(--button);
+	color: var(--text-color);	
+	border: none;
+	padding: 0.7rem;
+	font-size: 1rem;
+	border-radius: 6px;
+	margin-top: 5px;
+}
+.toggle-button:hover {
+	background-color: var(--button-hover);
+}
 
-
-.footer-container{
+.learn-more{
 	padding-left: 2em;
 	padding-right: 2em;
 }
-.footer-container a {
-  color: blue;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.learn-more a[href*="samoyed"]:visited {
+  color: var(--link-visited);
 }
 
-.footer-container a:visited {
-  color: red;
-}
-
-.footer-container a:hover {
-  color: lightblue; 
+.learn-more a[href*="samoyed"]:hover {
+  color: var(--link-hover); 
   text-decoration: underline;
 }
 
+.learn-more a:hover {
+  color: var(--link-hover); 
+  text-decoration: underline;
+}
+
+.footer-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center; 
+  align-items: center; 
+}
+
 @media (max-width: 760px) {
-	.header-container{
+	.header-main{
 		display: flex;
   	flex-direction: column;
 	}
@@ -170,19 +255,14 @@ p{
 	.breed-info-container{
 		padding-left: 1em;
 		padding-right: 2em;
-		font-size: 1.85rem;
 	}
 	.fun-facts-container{
 		padding-left: 1em;
 		padding-right: 1em;
-		font-size: 1.85rem;
 	}
 	.main-content img{
 		max-height: unset;
 		max-width: 100%;
-	}
-	h2 + ul{
-		margin-top: 0.2em;
 	}
 }
 
@@ -202,14 +282,18 @@ p{
 		object-fit: unset;
 	}
 	.breed-info-container{
-		font-size: 1.5rem;
-		margin-bottom: 6px;
+		padding-bottom: 6px;
 
 	}
 	.fun-facts-container{
-		font-size: 1.4rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+	.footer-container{
+		display: flex;
+		flex-direction: column;
+		justify-content: center; 
+		align-items: center; 
 	}
 }
 
@@ -228,21 +312,15 @@ p{
 	.main-content img {
 		display: block;
 	}
-	.breed-info-container{
-		font-size: 1.5rem;
-	}
-	.fun-facts-container{
-		font-size: 1.4rem;
-	}
 	.email-signup{
 		padding-left: 0.4rem;
 		padding-right: 0.4rem;
 
 	}
-	.footer-container h2{
+	.learn-more h2{
 		margin-bottom: 0;
 	}
-	.footer-container ul {
+	.learn-more ul {
 		padding-left: 1em;
 		margin-top: 0.5em;
 		margin-left: 0.5em;

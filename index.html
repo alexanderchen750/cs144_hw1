@@ -13,13 +13,18 @@
   </head>
   <body>
     <header class="header-container">
-       <div class="header-text">
-            <h1 class="page-title">Samoyed Fan Page</h1>
-            <h3>A webpage about the the Samoyed Breed</h3>
-       </div>
-       <div class="header-image">
-            <img src="samoyed-smile2.jpg" alt="Samoyed Smiling">
-       </div>
+			<div class="header-top">
+				<button id="theme-toggle" class="toggle-button">Toggle Theme</button>
+			</div>
+			<div class="header-main"> 
+				<div class="header-text">
+						<h1 class="page-title">Samoyed Fan Page</h1>
+						<h2 class="page-description">A webpage about the the Samoyed Breed</h2>
+				</div>
+				<div class="header-image">
+						<img src="samoyed-header.jpg" alt="Samoyed Smiling">
+				</div>
+			</div>
     </header>
 		<div class="main-content">
 			<article class="breed-info-container">
@@ -50,46 +55,44 @@
 				</ul>
 			</article>
 			<div class="samoyed-image1">
-				<img src="samoyed1.jpg"  alt="Samoyed Smiling">
+				<img src="samoyed1.jpeg"  alt="Samoyed Sitting in flowers and grass">
 			</div>
 			<div class="samoyed-image2">
-				<img src="samoyed-5.jpeg"  alt="Samoyed Pulling a Sled">
+				<img src="samoyed2.jpg"  alt="Samoyed Striding">
 			</div>
 			<div class="samoyed-image3">
-				<img src="samoyed-crop.jpeg"  alt="Samoyed Pulling a Sled">
+				<img src="samoyed3.jpeg"  alt="Samoyed in a forest">
 			</div>
 		</div>
-
-		<section class="email-signup">
-			<h2>Join Our Samoyed Fun Facts Mailing List!</h2>
-			<form>
-				<fieldset>
-					<legend>Sign Up Below</legend>
-		
-					<div>
-						<label for="first-name">First Name:</label>
-						<input type="text" id="first-name" name="first-name" required>
-					</div>
-					<div>
-						<label for="last-name">Last Name:</label>
-						<input type="text" id="last-name" name="last-name" required>
-					</div>
-					<div>
-						<label for="email">Email:</label>
-						<input type="email" id="email" name="email" required>
-					</div>
-					<input type="submit" value="Subscribe!">
-				</fieldset>
-			</form>
-		</section>
-
 		<footer class="footer-container">
-			<h2>Learn More About Samoyeds!</h2>
-			<ul>
-				<li>American Kennel Club. <a href="https://www.akc.org/dog-breeds/samoyed/" >Samoyed Breed Info</a></li>
-				<li>Samoyed Club of America. <a href="https://www.samoyedclubofamerica.org/" >Official Site</a></li>
-				<li>DogTime. <a href="https://dogtime.com/dog-breeds/samoyed" >Samoyed Overview</a></li>
-			</ul>
+			<section class="email-signup">
+				<h2>Join Our Samoyed Fun Facts Mailing List!</h2>
+				<form>
+					<fieldset>
+						<div>
+							<label for="first-name">First Name:</label>
+							<input type="text" id="first-name" name="first-name" required>
+						</div>
+						<div>
+							<label for="last-name">Last Name:</label>
+							<input type="text" id="last-name" name="last-name" required>
+						</div>
+						<div>
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<input type="submit" value="Subscribe!">
+					</fieldset>
+				</form>
+			</section>
+			<section class="learn-more">
+				<h2>Learn More About Samoyeds!</h2>
+				<ul>
+					<li>American Kennel Club. <a href="https://www.akc.org/dog-breeds/samoyed/" >Samoyed Breed Info</a></li>
+					<li>Samoyed Club of America. <a href="https://www.samoyedclubofamerica.org/" >Official Site</a></li>
+					<li>DogTime. <a href="https://dogtime.com/dog-breeds/samoyed" >Samoyed Overview</a></li>
+				</ul>
+			</section>
 		</footer>
     <script src="index.js"></script>
   </body>
